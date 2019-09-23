@@ -131,5 +131,12 @@ public class WebController {
 		modelAndView.addObject("users", listAllUsers());
 		return modelAndView;
 	}
+	/*
+	 * Assignment #3
+	 */
+	@RequestMapping(value = "/cs480/alan", method = RequestMethod.GET)
+	String alansPage() {
+		return "Alan Trieu";
+	}
 
 }
