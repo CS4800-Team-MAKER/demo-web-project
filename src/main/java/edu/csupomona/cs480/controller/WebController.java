@@ -143,4 +143,9 @@ public class WebController {
 		return "Alan Trieu";
 	}
 
+	@RequestMapping(value = "/cs480/minPark", method = RequestMethod.GET)
+	String minsPage() {
+		return "Team member: Min Park";
+	}
+
 }
