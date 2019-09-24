@@ -51,6 +51,10 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "OK";
 	}
+	@RequestMapping(value = "/cs480/ericRamirez", method = RequestMethod.GET)
+	String broncoTest() {
+		return "Team member: Eric Ramirez";
+	}
 
 	/**
 	 * This is a simple example of how to use a data manager
