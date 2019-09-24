@@ -147,5 +147,10 @@ public class WebController {
 	String minsPage() {
 		return "Team member: Min Park";
 	}
+	
+	@RequestMapping(value = "/cs480/klu91748", method = RequestMethod.GET)
+	String kevinsPage() {
+		return "Team member: Kevin Lu";
+	}
 
 }
