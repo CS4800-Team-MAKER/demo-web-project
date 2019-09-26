@@ -16,6 +16,8 @@ import edu.csupomona.cs480.data.provider.UserManager;
 
 import org.apache.commons.io.IOUtils;
 
+import org.joda.time.DateTime;
+
 /**
  * This is the controller used by Spring framework.
  * <p>
@@ -149,9 +151,15 @@ public class WebController {
 		return "Team member: Min Park";
 	}
 	
-	@RequestMapping(value = "/cs480/klu91748", method = RequestMethod.GET)
+	@RequestMapping(value = "/cs480/klu", method = RequestMethod.GET)
 	String kevinsPage() {
 		return "Team member: Kevin Lu";
+	}
+	
+	@RequestMapping(value = "/cs480/klu/method", method = RequestMethod.GET)
+	int kevinsmethod() {
+		DateTime date = new DateTime();
+		return date.getDayOfMonth();
 	}
 
 	@RequestMapping(value = "/cs480/RamirezR", method = RequestMethod.GET)
