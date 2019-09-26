@@ -193,6 +193,13 @@ public class WebController {
 	String minsPage() {
 		return "Team member: Min Park";
 	}
+
+	@RequestMapping(value = "/cs480/minPark/method", method = RequestMethod.GET)
+	void minParksmethod() {
+		String text = "Min Park's Method using Commons.io";
+		File file = new File("test.txt");
+		FileUtils.writeStringToFile(file, string);
+	}
 	
 	@RequestMapping(value = "/cs480/klu", method = RequestMethod.GET)
 	String kevinsPage() {
