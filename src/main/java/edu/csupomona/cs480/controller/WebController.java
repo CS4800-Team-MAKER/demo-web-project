@@ -14,6 +14,7 @@ import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.UserManager;
 
+import org.apache.commons.io.IOUtils;
 
 /**
  * This is the controller used by Spring framework.
