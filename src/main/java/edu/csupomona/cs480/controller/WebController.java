@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
+
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.UserManager;
@@ -175,6 +177,16 @@ public class WebController {
 	@RequestMapping(value = "/cs480/alan", method = RequestMethod.GET)
 	String alansPage() {
 		return "Alan Trieu";
+	}
+	
+	@RequestMapping(value = "/cs480/alan/method", method = RequestMethod.GET)
+	String alansMethod() {
+		Gson gson = new Gson();
+		
+		String[] test = {"1", "2", "3"};
+		String json = gson.toJson(test);
+		
+		return json;
 	}
 
 	@RequestMapping(value = "/cs480/minPark", method = RequestMethod.GET)
