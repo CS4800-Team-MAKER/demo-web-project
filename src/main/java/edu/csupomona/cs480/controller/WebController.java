@@ -18,6 +18,9 @@ import org.apache.commons.io.IOUtils;
 
 import org.joda.time.DateTime;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 /**
  * This is the controller used by Spring framework.
  * <p>
@@ -58,6 +61,34 @@ public class WebController {
 	String broncoTest() {
 		return "Team member: Eric Ramirez";
 	}
+	@RequestMapping(value = "/cs480/ericRamJSoup", method = RequestMethod.GET)
+    String parsingPage() {
+    	StringBuffer html = new StringBuffer();
+
+        html.append("<!DOCTYPE html>");
+        html.append("<html lang=\"en\">");
+        html.append("<head>");
+        html.append("<meta charset=\"UTF-8\" />");
+        html.append("<title>Bronco Life</title>");
+        html.append("<meta name=\"description\" content=\"Bronco Latest News\" />");
+        html.append("<meta name=\"keywords\" content=\"Bronco Gossip\" />");
+        html.append("</head>");
+        html.append("<body>");
+        html.append("<div id='color'>We are Green & Gold! </div> />");
+        html.append("</body>");
+        html.append("</html>");
+
+        Document doc = Jsoup.parse(html.toString());
+
+        String description = doc.select("meta[name=description]").get(0).attr("content");
+
+        String keywords = doc.select("meta[name=keywords]").first().attr("content");
+
+        String color1 = doc.getElementById("color").text();
+        String color2 = doc.select("div#color").get(0).text();
+  
+        return description + ", " + keywords + ", " + color1 + ", " + color2;
+    }
 
 	/**
 	 * This is a simple example of how to use a data manager
