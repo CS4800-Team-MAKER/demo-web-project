@@ -67,6 +67,15 @@
   			<artifactId>commons-math</artifactId>
   			<version>20040218.045431</version>
 		</dependency>
+		
+		<!-- EricRamirez-->
+        <dependency>
+			  <groupId>org.jsoup</groupId>
+			  <artifactId>jsoup</artifactId>
+			  <version>1.10.2</version>
+		</dependency>
+		<!-- EricRamirez -->
+
 
 	</dependencies>
 
